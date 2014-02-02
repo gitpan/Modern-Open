@@ -1,0 +1,41 @@
+NAME
+
+  Modern::Open - Three-argument open and Autovivification support
+
+SYNOPSIS
+
+  use Modern::Open;
+
+DESCRIPTION
+
+  Modern::Open provides three-argument open and autovivification support of
+  open, opendir, sysopen, pipe, socket, and accept, on perl 5.00503.
+  This is a module to help writing portable programs and modules across
+  recent and old versions of Perl.
+
+INSTALLATION
+
+  1. Copy Modern/Open.pm to @INC directory.
+
+SEE ALSO
+
+  open - Perl Programming Documentation
+  http://perldoc.perl.org/functions/open.html
+
+  Three-arg open() (Migrating to Modern Perl) - Modern Perl Programming
+  http://modernperlbooks.com/mt/2010/04/three-arg-open-migrating-to-modern-perl.html
+
+  Pre-Modern Perl VS Post-Modern Perl: FIGHT! - A blog about the Perl programming language
+  http://blogs.perl.org/users/buddy_burden/2013/06/pre-modern-perl-vs-post-modern-perl-fight.html
+
+  perl - open my $fh, "comand |"; # isn't modern - 404 Blog Not Found
+  http://blog.livedoor.jp/dankogai/archives/51176081.html
+
+  japerl - CPAN
+  http://search.cpan.org/dist/japerl/
+
+  ina - CPAN
+  http://search.cpan.org/~ina/
+
+  BackPAN - A Complete History of CPAN
+  http://backpan.perl.org/authors/id/I/IN/INA/
