@@ -8,7 +8,7 @@ package Modern::Open;
 # Copyright (c) 2014 INABA Hitoshi <ina@cpan.org>
 ######################################################################
 
-$Modern::Open::VERSION = 0.01;
+$Modern::Open::VERSION = 0.02;
 
 use 5.00503;
 use strict;
@@ -43,7 +43,6 @@ sub _open(*$;$) {
         }
         else {
             my $flags = {
-            ''    => O_RDONLY,
             '<'   => O_RDONLY,
             '>'   => O_WRONLY | O_TRUNC | O_CREAT,
             '>>'  => O_WRONLY |O_APPEND | O_CREAT,

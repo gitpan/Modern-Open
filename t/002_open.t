@@ -1,16 +1,10 @@
 use 5.00503;
 use strict;
 # use warnings;
-use Test::Simple tests => 9;
+use Test::Simple tests => 8;
 use Modern::Open;
 
 my $rc = 0;
-
-$rc = open(FILE,'',"$0");
-ok($rc, q{open(FILE,'',"$0")});
-if ($rc) {
-    close(FILE);
-}
 
 $rc = open(FILE,'<',"$0");
 ok($rc, q{open(FILE,'<',"$0")});

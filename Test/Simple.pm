@@ -32,11 +32,11 @@ sub import {
 
 sub ok {
     if ($_[0]) {
-        print join(' - ',"ok $testno",$_[1]), "\n";
+        print join(' - ',grep(/./,"ok $testno",$_[1])), "\n";
         $ok++;
     }
     else {
-        print join(' - ',"not ok $testno",$_[1]), "\n";
+        print join(' - ',grep(/./,"not ok $testno",$_[1])), "\n";
     }
     $testno++;
 }

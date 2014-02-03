@@ -1,16 +1,10 @@
 use 5.00503;
 use strict;
 # use warnings;
-use Test::Simple tests => 9;
+use Test::Simple tests => 8;
 use Modern::Open;
 
 my $rc = 0;
-
-$rc = open(my $fh1,'',"$0");
-ok($rc, q{open(my $fh1,'',"$0")});
-if ($rc) {
-    close($fh1);
-}
 
 $rc = open(my $fh2,'<',"$0");
 ok($rc, q{open(my $fh2,'<',"$0")});
