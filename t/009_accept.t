@@ -7,12 +7,19 @@ use Socket;
 
 my $rc = 0;
 
+
 $rc = socket(PROTOSOCKET,PF_INET,SOCK_STREAM,getprotobyname('tcp'));
 ok($rc, q{socket(PROTOSOCKET,PF_INET,SOCK_STREAM,getprotobyname('tcp'))});
 
-if (not CORE::accept(SOCKET,PROTOSOCKET)) {
+if ($^O =~ /cygwin/) {
     for (2..6) {
-        ok(1, 'SKIP');
+        ok(1, "SKIP \$^O=$^O");
+    }
+    exit;
+}
+elsif (not CORE::accept(SOCKET,PROTOSOCKET)) {
+    for (2..6) {
+        ok(1, "SKIP \$^O=$^O");
     }
     exit;
 }

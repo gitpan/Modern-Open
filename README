@@ -31,6 +31,12 @@ SEE ALSO
   perl - open my $fh, "comand |"; # isn't modern - 404 Blog Not Found
   http://blog.livedoor.jp/dankogai/archives/51176081.html
 
+  Migrating scripts back to Perl 5.005_03
+  http://www.perlmonks.org/?node_id=289351
+
+  Goodnight, Perl 5.005
+  http://www.oreillynet.com/onlamp/blog/2007/11/goodnight_perl_5005.html
+
   japerl - CPAN
   http://search.cpan.org/dist/japerl/
 

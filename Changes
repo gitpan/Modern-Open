@@ -1,5 +1,11 @@
 Revision history for this software.
 
+0.03 2014-02-09 00:00:00
+  - error at Unknown open() mode
+  - add strict.pm_, feature.pm_
+  - SKIP 009_accept.t on cygwin
+  - created by INABA Hitoshi
+
 0.02 2014-02-03 00:00:00
   - fix 002_open.t, 004_open.t
   - created by INABA Hitoshi

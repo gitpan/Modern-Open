@@ -8,7 +8,7 @@ package Modern::Open;
 # Copyright (c) 2014 INABA Hitoshi <ina@cpan.org>
 ######################################################################
 
-$Modern::Open::VERSION = 0.02;
+$Modern::Open::VERSION = 0.03;
 
 use 5.00503;
 use strict;
@@ -42,15 +42,18 @@ sub _open(*$;$) {
             return CORE::open($handle,qq{| $filename});
         }
         else {
-            my $flags = {
-            '<'   => O_RDONLY,
-            '>'   => O_WRONLY | O_TRUNC | O_CREAT,
-            '>>'  => O_WRONLY |O_APPEND | O_CREAT,
-            '+<'  => O_RDWR,
-            '+>'  => O_RDWR | O_TRUNC  | O_CREAT,
-            '+>>' => O_RDWR | O_APPEND | O_CREAT,
-            }->{$mode};
-            return CORE::sysopen($handle,$filename,$flags);
+            my %flags = (
+                '<'   => O_RDONLY,
+                '>'   => O_WRONLY | O_TRUNC | O_CREAT,
+                '>>'  => O_WRONLY |O_APPEND | O_CREAT,
+                '+<'  => O_RDWR,
+                '+>'  => O_RDWR | O_TRUNC  | O_CREAT,
+                '+>>' => O_RDWR | O_APPEND | O_CREAT,
+            );
+            if (not exists $flags{$mode}) {
+                carp "Unknown open() mode '$mode'";
+            }
+            return CORE::sysopen($handle,$filename,$flags{$mode});
         }
     }
     elsif (@_ == 2) {
@@ -210,13 +213,17 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 =over 4
 
-=item * L<Perl Programming Documentation|http://perldoc.perl.org/functions/open.html> - open
+=item * L<open|http://perldoc.perl.org/functions/open.html> - Perl Programming Documentation
 
-=item * L<Modern Perl Programming|http://modernperlbooks.com/mt/2010/04/three-arg-open-migrating-to-modern-perl.html> - Three-arg open() (Migrating to Modern Perl)
+=item * L<Three-arg open() (Migrating to Modern Perl)|http://modernperlbooks.com/mt/2010/04/three-arg-open-migrating-to-modern-perl.html> - Modern Perl Programming
 
-=item * L<A blog about the Perl programming language|http://blogs.perl.org/users/buddy_burden/2013/06/pre-modern-perl-vs-post-modern-perl-fight.html> - Pre-Modern Perl VS Post-Modern Perl: FIGHT!
+=item * L<Pre-Modern Perl VS Post-Modern Perl: FIGHT!|http://blogs.perl.org/users/buddy_burden/2013/06/pre-modern-perl-vs-post-modern-perl-fight.html> - A blog about the Perl programming language
 
-=item * L<404 Blog Not Found|http://blog.livedoor.jp/dankogai/archives/51176081.html> - perl - open my $fh, "comand |"; # isn't modern
+=item * L<perl - open my $fh, "comand |"; # isn't modern|http://blog.livedoor.jp/dankogai/archives/51176081.html> - 404 Blog Not Found
+
+=item * L<Migrating scripts back to Perl 5.005_03|http://www.perlmonks.org/?node_id=289351> - PerlMonks
+
+=item * L<Goodnight, Perl 5.005|http://www.oreillynet.com/onlamp/blog/2007/11/goodnight_perl_5005.html> - ONLamp.com
 
 =item * L<japerl|http://search.cpan.org/dist/japerl/> - CPAN
 
