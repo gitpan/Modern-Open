@@ -1,5 +1,10 @@
 Revision history for this software.
 
+0.04 2014-08-07 00:00:00
+  - fix name of META.yml
+  - support Strict::Perl
+  - created by INABA Hitoshi
+
 0.03 2014-02-09 00:00:00
   - error at Unknown open() mode
   - add strict.pm_, feature.pm_

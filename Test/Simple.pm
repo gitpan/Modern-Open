@@ -4,13 +4,16 @@ package # hide from PAUSE(The [Perl programming] Authors Upload Server)
 use 5.00503;
 use strict;
 use vars qw($VERSION $tests $testno $ok);
-$VERSION = 0.01;
+$VERSION = 0.02;
 $tests = 0;
 $testno = 1;
 $ok = 0;
 
 BEGIN {
     $| = 1;
+}
+
+INIT {
     $SIG{__DIE__} = sub { exit(255) };
 }
 
