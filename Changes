@@ -1,5 +1,10 @@
 Revision history for this software.
 
+0.05 2014-08-09 00:00:00
+  - add sub warnings::register_categories
+  - fix ABSTRACT
+  - created by INABA Hitoshi
+
 0.04 2014-08-07 00:00:00
   - fix name of META.yml
   - support Strict::Perl

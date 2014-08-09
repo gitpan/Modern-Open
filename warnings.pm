@@ -2,7 +2,7 @@ package # hide from PAUSE(The [Perl programming] Authors Upload Server)
         warnings;
 
 $VERSION =
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 BEGIN {
     my @pragma = grep -e, map {"$_/" . __FILE__} @INC;
@@ -68,6 +68,9 @@ sub warnif {
     }
 }
 
+sub register_categories {
+}
+
 1;
 __END__
 
@@ -101,6 +104,8 @@ warnings - poor warnings.pm to emulate "use warnings;"
     warnings::warnif("some warning");
     warnings::warnif("void", "some warning");
     warnings::warnif($object, "some warning");
+
+    warnings::register_categories(@categories);
 
 =head1 ABSTRACT
 
