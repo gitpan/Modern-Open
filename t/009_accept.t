@@ -1,7 +1,6 @@
 use 5.00503;
 use strict;
-# use warnings;
-use Test::Simple tests => 6;
+use Test::Simply tests => 6;
 use Modern::Open;
 use Socket;
 

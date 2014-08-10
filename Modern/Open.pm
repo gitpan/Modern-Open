@@ -8,7 +8,7 @@ package Modern::Open;
 # Copyright (c) 2014 INABA Hitoshi <ina@cpan.org>
 ######################################################################
 
-$Modern::Open::VERSION = 0.05;
+$Modern::Open::VERSION = 0.06;
 
 use 5.00503;
 use strict;

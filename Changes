@@ -1,5 +1,11 @@
 Revision history for this software.
 
+0.06 2014-08-10 00:00:00
+  - prevent from installing on newer perls
+  - rename Test/Simple.pm to Test/Simply.pm
+  - remove strict.pm_, warnings.pm, warnings/register.pm, and feature.pm_
+  - created by INABA Hitoshi
+
 0.05 2014-08-09 00:00:00
   - add sub warnings::register_categories
   - fix ABSTRACT

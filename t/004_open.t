@@ -1,7 +1,6 @@
 use 5.00503;
 use strict;
-# use warnings;
-use Test::Simple tests => 8;
+use Test::Simply tests => 8;
 use Modern::Open;
 
 my $rc = 0;

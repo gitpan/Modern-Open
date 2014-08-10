@@ -5,11 +5,7 @@ pMakefile.PL
 MANIFEST
 README
 META.yml
-strict.pm_
-warnings.pm
-warnings/register.pm
-feature.pm_
-Test/Simple.pm
+Test/Simply.pm
 t/001_open.t
 t/002_open.t
 t/003_open.t

@@ -1,10 +1,9 @@
-package # hide from PAUSE(The [Perl programming] Authors Upload Server)
-        Test::Simple;
+package Test::Simply;
 
 use 5.00503;
 use strict;
 use vars qw($VERSION $tests $testno $ok);
-$VERSION = 0.02;
+$VERSION = 0.03;
 $tests = 0;
 $testno = 1;
 $ok = 0;
@@ -27,7 +26,7 @@ sub import {
         print "1..$tests\n";
     }
     else {
-        die "Test::Simple requires 'tests', like 'use Test::Simple tests => 3;'\n";
+        die "Test::Simply requires 'tests', like 'use Test::Simply tests => 3;'\n";
     }
     no strict 'refs';
     *{caller() . '::ok'}  = \&ok;
@@ -52,11 +51,11 @@ __END__
 
 =head1 NAME
 
-  Test::Simple - Test::Simple for perl 5.00503
+Test::Simply - Test::Simple for perl 5.00503
 
 =head1 SYNOPSIS
 
-  use Test::Simple tests => 1;
+  use Test::Simply tests => 1;
   ok( $foo eq $bar, 'foo is bar' );
 
 =head1 DESCRIPTION
